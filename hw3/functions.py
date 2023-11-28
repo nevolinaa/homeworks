@@ -3,44 +3,44 @@ import streamlit as st
 
 
 def get_images():
-    gender = Image.open('./pictures/gender.png')
-    flat = Image.open('./pictures/flat.png')
-    credit_status = Image.open('./pictures/credit_status.png')
-    working = Image.open('./pictures/working.png')
-    pens = Image.open('./pictures/pens.png')
-    auto = Image.open('./pictures/auto.png')
-    education = Image.open('./pictures/education.png')
-    family_status = Image.open('./pictures/family_status.png')
-    family_revenue = Image.open('./pictures/family_revenue.png')
+    gender = Image.open('hw3/pictures/gender.png')
+    flat = Image.open('hw3/pictures/flat.png')
+    credit_status = Image.open('hw3/pictures/credit_status.png')
+    working = Image.open('hw3/pictures/working.png')
+    pens = Image.open('hw3/pictures/pens.png')
+    auto = Image.open('hw3/pictures/auto.png')
+    education = Image.open('hw3/pictures/education.png')
+    family_status = Image.open('hw3/pictures/family_status.png')
+    family_revenue = Image.open('hw3/pictures/family_revenue.png')
 
-    target = Image.open('./pictures/target.png')
+    target = Image.open('hw3/pictures/target.png')
 
-    children = Image.open('./pictures/children.png')
-    term_credit = Image.open('./pictures/term_credit.png')
-    industry_work = Image.open('./pictures/industry_work.png')
-    work_title = Image.open('./pictures/work_title.png')
-    work_dir = Image.open('./pictures/work_dir.png')
+    children = Image.open('hw3/pictures/children.png')
+    term_credit = Image.open('hw3/pictures/term_credit.png')
+    industry_work = Image.open('hw3/pictures/industry_work.png')
+    work_title = Image.open('hw3/pictures/work_title.png')
+    work_dir = Image.open('hw3/pictures/work_dir.png')
 
-    age = Image.open('./pictures/age.png')
+    age = Image.open('hw3/pictures/age.png')
     
-    personal_income = Image.open('./pictures/personal_income.png')
-    personal_income_log = Image.open('./pictures/personal_income_log.png')
+    personal_income = Image.open('hw3/pictures/personal_income.png')
+    personal_income_log = Image.open('hw3/pictures/personal_income_log.png')
     
-    sum_credit = Image.open('./pictures/sum_credit.png')
-    sum_credit_log = Image.open('./pictures/sum_credit_log.png')
+    sum_credit = Image.open('hw3/pictures/sum_credit.png')
+    sum_credit_log = Image.open('hw3/pictures/sum_credit_log.png')
     
-    first_payment = Image.open('./pictures/first_payment.png')
-    first_payment_log = Image.open('./pictures/first_payment_log.png')
+    first_payment = Image.open('hw3/pictures/first_payment.png')
+    first_payment_log = Image.open('hw3/pictures/first_payment_log.png')
 
-    correlation = Image.open('./pictures/correlation.png')
+    correlation = Image.open('hw3/pictures/correlation.png')
 
-    credit_fstpayment = Image.open('./pictures/credit_fstpayment.png')
-    dependants_child = Image.open('./pictures/dependants_child.png')
+    credit_fstpayment = Image.open('hw3/pictures/credit_fstpayment.png')
+    dependants_child = Image.open('hw3/pictures/dependants_child.png')
 
-    age_target = Image.open('./pictures/age_target.png')
-    gender_target = Image.open('./pictures/gender_target.png')
-    education_target = Image.open('./pictures/education_target.png')
-    income_target = Image.open('./pictures/income_target.png')
+    age_target = Image.open('hw3/pictures/age_target.png')
+    gender_target = Image.open('hw3/pictures/gender_target.png')
+    education_target = Image.open('hw3/pictures/education_target.png')
+    income_target = Image.open('hw3/pictures/income_target.png')
     
     return gender, flat, credit_status, working, pens, auto, education, family_status, family_revenue, target, \
            children, term_credit, industry_work, work_title, work_dir, age, personal_income, personal_income_log, sum_credit,\
