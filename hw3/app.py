@@ -6,9 +6,9 @@ from PIL import Image
 from functions import plot_features
 from model import pack_input, preprocess_data, open_data, predict_on_input
 
-bank = Image.open('pictures/bank.png')
+bank = Image.open('./pictures/bank.png')
 
-_, _, _, _, scaler = preprocess_data(open_data('data/df.csv'))
+_, _, _, _, scaler = preprocess_data(open_data('./data/df.csv'))
 
 def render_page(bank):
     """ creates app page with tabs """
@@ -24,11 +24,11 @@ def render_page(bank):
         st.subheader('EDA: исследуем данные')
         
         st.subheader('Описательные статистики: категориальные переменные')
-        description_cat = pd.read_csv('data/description_cat.csv', index_col='Unnamed: 0')
+        description_cat = pd.read_csv('./data/description_cat.csv', index_col='Unnamed: 0')
         st.dataframe(description_cat)
 
         st.subheader('Описательные статистики: вещественные переменные')
-        description_num = pd.read_csv('data/description_num.csv', index_col='Unnamed: 0')
+        description_num = pd.read_csv('./data/description_num.csv', index_col='Unnamed: 0')
         st.dataframe(description_num)
     
         plot_features()
@@ -103,11 +103,11 @@ def render_page(bank):
                     st.error('Что-то пошло не так...')
                     
     with tab3:
-        feature_importances = Image.open('pictures/feature_importances.png')
+        feature_importances = Image.open('./pictures/feature_importances.png')
         st.write('**Важные для модели признаки:**')
         st.image(feature_importances)
         
-        shap = Image.open('pictures/shap.png')
+        shap = Image.open('./pictures/shap.png')
         st.write('**SHAP**')
         st.image(shap)
         
