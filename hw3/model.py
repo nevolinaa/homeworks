@@ -132,10 +132,10 @@ def preprocess_data(df: pd.DataFrame):
 
     return X_train, X_test, y_train, y_test, ss
 
-def loadmodel(path="hw3/model.mw"):
+def loadmodel():
     """ load model"""
 
-    with open(path, "rb") as file:
+    with open("hw3/model.mw", "rb") as file:
         model = load(file)
 
     return model
