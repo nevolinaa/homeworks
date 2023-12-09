@@ -5,23 +5,19 @@ import pandas as pd
 
 def get_images():
     correlation = Image.open('hw3/pictures/correlation.png')
-
     credit_fstpayment = Image.open('hw3/pictures/credit_fstpayment.png')
     dependants_child = Image.open('hw3/pictures/dependants_child.png')
-
     age_target = Image.open('hw3/pictures/age_target.png')
     gender_target = Image.open('hw3/pictures/gender_target.png')
     education_target = Image.open('hw3/pictures/education_target.png')
     income_target = Image.open('hw3/pictures/income_target.png')
     
-    return сredit_fstpayment, dependants_child, age_target, gender_target, education_target, income_target
+    return correlation, credit_fstpayment, dependants_child, age_target, gender_target, education_target, income_target
 
 def plot_features():
     df = st.cache_data(pd.read_csv)("hw3/data/df.csv") 
-    
-    
-    сredit_fstpayment, dependants_child, age_target, gender_target, education_target, income_target = get_images()
-    
+    correlation, сredit_fstpayment, dependants_child, age_target, gender_target, education_target, income_target = get_images()
+
     
     st.subheader('Графики распределения: бинарные переменные')
     bin_cols = {
@@ -52,8 +48,7 @@ def plot_features():
     st.write('Большая часть кредитов в выборке закрыта')
     st.write('В основном люди в выборке работающие')
     st.write('В основном люди в выборке не пенсионеры')
-        
-    
+
     
     st.subheader('Графики распределения: категориальные переменные')
     cat_cols = ['OWN_AUTO', 'EDUCATION', 'MARITAL_STATUS', 'FAMILY_INCOME', 
@@ -76,7 +71,7 @@ def plot_features():
     st.write('Видим, что есть несколько крупных групп: с кредитам на 3,6,10 и 12 лет')
     st.write('В основном в выборке представлены работающие в торговле люди')
     st.write('В основном в выборке представлены специалисты и рабочие')
-    
+
     
     st.subheader('Графики распределения: вещественные переменные')
     vesh_cols = ['AGE', 'PERSONAL_INCOME', 'CREDIT', 'FST_PAYMENT']
