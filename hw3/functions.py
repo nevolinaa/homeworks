@@ -16,7 +16,7 @@ def get_images():
 
 def plot_features():
     df = st.cache_data(pd.read_csv)("hw3/data/df.csv") 
-    correlation, сredit_fstpayment, dependants_child, age_target, gender_target, education_target, income_target = get_images()
+    correlation, credit_fstpayment, dependants_child, age_target, gender_target, education_target, income_target = get_images()
 
     
     st.subheader('Графики распределения: бинарные переменные')
