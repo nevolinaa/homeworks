@@ -2,6 +2,7 @@ from PIL import Image
 import streamlit as st
 import matplotlib.pyplot as plt
 import pandas as pd
+import seaborn as sns
 
 def get_images():
     age_target = Image.open('hw3/pictures/age_target.png')
