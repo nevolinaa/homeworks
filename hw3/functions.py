@@ -4,19 +4,16 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 def get_images():
-    correlation = Image.open('hw3/pictures/correlation.png')
-    credit_fstpayment = Image.open('hw3/pictures/credit_fstpayment.png')
-    dependants_child = Image.open('hw3/pictures/dependants_child.png')
     age_target = Image.open('hw3/pictures/age_target.png')
     gender_target = Image.open('hw3/pictures/gender_target.png')
     education_target = Image.open('hw3/pictures/education_target.png')
     income_target = Image.open('hw3/pictures/income_target.png')
     
-    return correlation, credit_fstpayment, dependants_child, age_target, gender_target, education_target, income_target
+    return age_target, gender_target, education_target, income_target
 
 def plot_features():
     df = st.cache_data(pd.read_csv)("hw3/data/df.csv") 
-    correlation, credit_fstpayment, dependants_child, age_target, gender_target, education_target, income_target = get_images()
+    age_target, gender_target, education_target, income_target = get_images()
 
     
     st.subheader('Графики распределения: бинарные переменные')
@@ -89,12 +86,22 @@ def plot_features():
     st.write('В основном сумма кредита составляет до 20 тысяч рублей')
     
     st.subheader('Корреляционный анализ')
-    st.image(correlation)
+    fig, ax = plt.subplots()
+    sns.heatmap(df[list(bin_cols.keys())+vesh_cols].corr(), cmap="magma", ax=ax)
+    st.write(fig)
     st.write('Видим, что сильно скоррелированы между собой признаки величины кредита и первого взноса, срока кредита. С целевой переменной связь у признаков в основном не сильная')
         
     st.write('**Скоррелированные признаки**')
-    st.image(credit_fstpayment)
-    st.image(dependants_child)
+    fig, ax = plt.subplots()
+    ax.scatter(df['CREDIT'], df['FST_PAYMENT'], color='#982d80')
+    plt.title(f'Скоррелированные признаки CREDIT и FST_PAYMENT')
+    st.pyplot(fig)
+    
+    st.write('**Скоррелированные признаки**')
+    fig, ax = plt.subplots()
+    ax.scatter(df['DEPENDANTS'], df['CHILD_TOTAL'], color='#982d80')
+    plt.title(f'Скоррелированные признаки DEPENDANTS и CHILD_TOTAL')
+    st.pyplot(fig)
         
     st.subheader('Связь признаков с таргетом')
     st.image(age_target)      
