@@ -14,15 +14,13 @@ def get_images():
     education_target = Image.open('hw3/pictures/education_target.png')
     income_target = Image.open('hw3/pictures/income_target.png')
     
-    return сredit_fstpayment, dependants_child, age_target, \
-            gender_target, education_target, income_target
+    return сredit_fstpayment, dependants_child, age_target, gender_target, education_target, income_target
 
 def plot_features():
     df = st.cache_data(pd.read_csv)("hw3/data/df.csv") 
     
     
-    сredit_fstpayment, dependants_child, age_target, \
-    gender_target, education_target, income_target = get_images()
+    сredit_fstpayment, dependants_child, age_target, gender_target, education_target, income_target = get_images()
     
     
     st.subheader('Графики распределения: бинарные переменные')
