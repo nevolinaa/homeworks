@@ -18,7 +18,7 @@ def get_images():
             gender_target, education_target, income_target
 
 def plot_features():
-    df = st.cache_data(pd.read_csv)("df.csv")
+    df = st.cache_data(pd.read_csv)("'hw3/data/df.csv") 
     
     
     сredit_fstpayment, dependants_child, age_target, \
